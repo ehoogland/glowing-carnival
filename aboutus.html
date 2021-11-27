@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Bootstrap CSS comes first (after required meta tags); additional CSS must be 
+            placed after Bootstrap CSS. Place bootstrap-social after font-awesome -->
+        <!-- build:css css/main.css -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+        <link rel="stylesheet" href="css/styles.css" />
+        <!-- endbuild -->
+        <!-- not a local file; place after endbuild -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro" />
+        <title>About Us: The Fun Vegan</title>
+    </head>
+
+    <body>
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                        <a href="index.html"><img src="img/white_mushrooms.png" class="img-fluid" /></a> 
+                    </div>       
+                    <div class="col">
+                        <h1>The Fun Vegan</h1>
+                        <h2>plant based with a side of fungi</h2>
+                    </div>
+                </div> 
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+            <!--MDN: The data-* global attributes form a class of attributes called custom data attributes, that allow proprietary
+                information to be exchanged between the HTML and its DOM representation by scripts. -->
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="img/white_mushrooms.png" height="30" width="30" /></a>
+                <!--Add code for a button; remove ml-auto from navbar toggles class-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Enclose the ul element in the Navbar with a new div with the collapse and navbar-collapse classes, 
+                    and an id that matches the data-target used in the previously added button.
+                    Add another div with a container class around all the contents of the nav element:-->
+                <div class="collapse navbar-collapse" id="nucampNavbar"> 
+                    
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-info fa-lg"></i> About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!--end container-->  
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active">About</li>
+                    </ol>
+                    <h2>About Us</h2>
+                </div>
+            </div>
+        
+            <div class="row row-content">
+                <div class="col-sm-6">
+                    <h3>Our Mission</h3>
+                    <p>Aenean non turpis ipsum. Phasellus vel pharetra dui. Suspendisse potenti. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tortor lectus, pretium et velit id, semper rhoncus metus. Vestibulum efficitur justo nec volutpat congue. Nullam facilisis tortor a purus cursus tempor. Nullam mauris leo, dignissim sed suscipit placerat, volutpat eu est. Nunc sodales at justo eget consequat. Nullam posuere laoreet auctor. </p>
+                </div>
+               
+                <div class="col-sm-6">
+                    <div class="card">
+                        <h3 class="card-header bg-primary text-white">Facts At a Glance</h3>
+                        <div class="card-body">
+                            <dl class="row">
+                                <dt class="col-6">Founded</dt>
+                                <dd class="col-6">February 5, 2019</dd>
+                                <dt class="col-6">No. of Rooms in 2020</dt>
+                                <dd class="col-6">563</dd>
+                                <dt class="col-6">No. of Reviews in 2020</dt>
+                                <dd class="col-6">4388</dd>
+                                <dt class="col-6">Employees</dt>
+                                <dd class="col-6">12</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-light mt-3">
+                        <blockquote class="blockquote card-body">
+                            <p class="mb-0">Some people think plant-based diet, whole foods diet is extreme. 
+                                Half a million people a year will have their chests opened up and a vein taken from their leg and sewn onto their coronary artery. Some people would call that extreme.</p>
+                            <footer class="blockquote-footer">Caldwell Esselstyn
+                                <cite title="Source Title">Featured in: Caldwell Esselstyn Quotes
+                                </cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>   
+            </div>  
+            <div class="row row-content">
+                <div class="col">
+                    <h3>Community Partners</h3>
+                    <div id="accordion">
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a data-toggle="collapse" data-target="#bootstrap">
+                                        Forager <small>Outdoor Gear Specialists</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse show" id="bootstrap" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="d-none d-sm-block">Forager supplies you with the gear you need at prices you can't beat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" data-toggle="collapse" data-target="#git">
+                                        Voyageurs <small>Group Adventure Expeditions</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse" id="git" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="d-none d-sm-block">Join Voyageurs to explore new paths with a group of other adventurers!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" data-toggle="collapse" data-target="#sql">
+                                        SQL Veggies
+                                        <small>Your Neighborhood Vegan Food Mart</small>
+                                   </a>
+                                </h4>
+                                <div class="collapse" id="sql" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="d-none d-sm-block">Need some tofu or nooch? Stop by SQL Veggies.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" data-toggle="collapse" data-target="#node">
+                                        Django Outdoor Apparel <small>Outdoor Clothes & Shoes</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse" id="node" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p class="d-none d-sm-block">From polar fleeces to swimsuits, hiking boots to waders, a visit to Django will be sure to get you covered.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end accordion-->
+                </div> <!--end col-->
+            </div><!--end row row-content-->
+            <div class="row row-content">
+                <div class="col-sm-9">
+                    <h2>Facts &amp; Figures</h2>
+                    <div class="table-responsive">
+                           <table class="table table-striped">
+                            <thead>
+                                <tr class="bg-primary text-light">
+                                    <th></th>
+                                    <th>2018</th>
+                                    <th>2019</th>
+                                    <th>2020</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-primary">
+                                <tr>
+                                    <th>Staff Foraging Experts</th>
+                                    <td>10</td>
+                                    <td>20</td>
+                                    <td>40</td>
+                                </tr>
+                                <tr>
+                                    <th>New Foragers</th>
+                                    <td>256</td>
+                                    <td>1,280</td>
+                                    <td>5,360</td>
+                                </tr>
+                                <tr>
+                                    <th>Square Miles Covered</th>
+                                    <td>101,325</td>
+                                    <td>423,000</td>
+                                    <!--originally ~3,000,000,000, a typo-->
+                                    <td>~3 million</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>                
+                </div>
+           </div> 
+        </div> <!--end container-->
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-sm-2 offset-md-1">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Sites</a></li>
+                            <li><a href="contactus.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-5 text-center">
+                        <h5>Social</h5>
+                        <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <a role="button" class="btn btn-link" href="tel:+18888675309"> <i class="fa fa-phone fa-lg text-primary"></i> 1-888-867-5309</a><br />
+                        <a role="button" class="btn btn-link" href="mailto:rooms@fungifest.fr"><i class="fa fa-envelope-o fa-lg text-primary"></i> rooms@fungifest.fr</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->
+        <!-- The build...endbuild comment lets usemin know that these are the files to concatenate, 
+             minify and uglify and to put in this location: js/main.js -->
+        <!-- build:js js/main.js -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

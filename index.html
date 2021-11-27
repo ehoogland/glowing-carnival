@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags always come first -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+        <!-- Additional CSS must be placed after Bootstrap CSS -->
+        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+        <!--place bootstrap-social after font-awesome-->
+        <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Crimson+Pro">
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <title>The Fun Vegan: Plant Based with a side of fungi</title>
+    </head>
+    <body>
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container"> <!--container, then row, then column classes-->
+                <div class="row"> <!-- get rid of logo-->
+                    <div class="col-4 col-sm-3 col-md-2 align-self-center">
+                        <img src="img/white_mushrooms.png" class="img-fluid" /> 
+                    </div>
+                    <div class="col">
+                        <h1>The Fun Vegan</h1>
+                        <h2>plant based with a side of fungi</h2>
+                    </div>
+                    <div class="col-md-4 col-xl-2 mt-4"> 
+                        <!-- text-nowrap keeps text from breaking up and keeps background of button from missing a corner. 
+                        Removed tooltip. Tooltip complained about "<" and seems to require &lt; (ISO 8859-1) Removed tooltip code: 
+                        data-toggle="tooltip" data-placement="bottom" data-html="true" title="Or call us at &lt;br />&lt;strong>1-800-867-5309&lt;/strong>"
+                        <a href="#reserveForm" id="reserveButton" class="btn btn-lg btn-info text-nowrap">Reserve Room for FungiFest</a> -->
+                        <!--for button activation, removed custom css data- attributes data-toggle="modal" data-target="#reserveModal"; 
+                        replaced data- attributes with id="reserveButton" to implement and hook into JavaScript (in the form of jQuery) -->
+                        <button type="button" id="reserveButton" class="btn btn-lg btn-info text-nowrap">Reserve Room for FungiFest
+
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="img/white_mushrooms.png" height="40" width="40" /></a>
+        
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nucampNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Enclose the ul element in the Navbar with a new div with the collapse and navbar-collapse classes, 
+                    and an id that matches the data-target used in the previously added button.
+                    Add another div with a container class around all the contents of the nav element:-->
+                <div class="collapse navbar-collapse" id="nucampNavbar">  
+                    <ul class="navbar-nav">
+                        <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i> About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i> Sites</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i> Contact</a></li>
+                    </ul>
+                    <!--button that, on click, will open modal.-->
+                    <!--replaced data- attributes data-toggle="modal" and data-target="#loginModal" 
+                    with id="loginButton" to implement and hook into JavaScript (in the form of jQuery) -->
+                    <span class="navbar-text ml-auto">
+                        <a id="loginButton"> <!--role="button" not needed and, being within an anchor tag, may not validate in W3C validator-->
+                            <i class="fa fa-sign-in"></i> Login
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <!--code for modal can go anywhere; this keeps it close to the button that opens it. 
+            Since there's no HTML element called modal, div used. Modal fade gives a fade-in effect; 
+            role is for accessibility purposes-->
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Login</h3>
+                        <!--HTML character entity makes an X button (in the modal-header)-->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!--The .container-fluid class provides a container that spans the width of the viewport-->
+                        <div class="container-fluid">
+                            <form> <!--inside form element, use form-row classes along with column divs to set up a Bootstrap grid-->
+                                <div class="form-row">
+                                    <div class="form-group col-12"> <!--sr-only: only visible to screen-reading software-->
+                                        <label class="sr-only" for="loginEmail">Email address</label>
+                                        <!--add form-control class to text input elements (input, select, textarea). Bootstrap forces form 
+                                            elements to look the same cross-browser and responsively-->
+                                        <input type="email" class="form-control form-control-sm" id="loginEmail" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group col-12">
+                                        <label class="sr-only" for="loginPassword">Password</label>
+                                        <input type="password" class="form-control form-control-sm" id="loginPassword" placeholder="Password">
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox">
+                                            <label class="form-check-label"> Remember me</label>
+                                        </div>
+                                    </div>
+                                </div> <!--end form-row-->
+                                <div class="form-row">
+                                    <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--end login modal-->
+        <div id="reserveModal" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header"><!-- remove bg-info text-white -->
+                        <h3 class="modal-title">Reserve A Room</h3>
+                        <!--    HTML character entity makes an X button (in the modal-header) -->
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <!--The .container-fluid class provides a container that spans the width of the viewport-->
+                        <div class="container-fluid">
+                            <form id="#reserveForm"> 
+                                <div class="form-group row">         
+                                    <!--col-form-label makes labels vertically centered with their associated controls-->
+                                    <label class="col-sm-6 col-form-label">Number of Rooms</label>
+                                    <div class="col">
+                                        <select class="form-control" name="numRooms" id="numRooms">
+                                            <option value="">Select...</option>
+                                            <option>1</option> <!--default values-->
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Date</label>
+                                    <div class="col">
+                                        <input class="form-control" type="date" id="date" name="date" placeholder="mm/dd/yyyy">
+                                    </div>     
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-6 col-form-label">Room Type</label>
+                                    <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                            <input type="radio" name="roomType" id="queen" value="Queen" autocomplete="off" checked>Queen
+                                        </label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="roomType" id="suite" value="Suite" autocomplete="off">Suite
+                                        </label>   
+
+                                    </div>
+                                </div>
+                                <div class="form-group row">    
+                                    <div class="col">
+                                        <!--btn btn-secondary and bg-secondary are a gray background of the same color as a secondary link; 
+                                            btn btn-primary and bg-primary are a blue background of the same color as a primary link-->      
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div><!--end reserve modal-->
+
+        <div class="container">
+            <!--first child row of container-->
+            <div class="row row-content">
+                <!-- mx-auto is for fixed width (here, a width is set in css/styles.css) block level (a div is a block-level element) content -->
+                <div class="col-md-6 mx-auto"><!--mx-auto centers {property m: margin} {x=sets both *-left and *-right} -->
+                    <!-- "base component class" of carousel; slide class for smoother slide transitions;
+                    data-ride to start carousel on page load -->    
+                    <div id="homeCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#homeCarousel" data-slide-to="1"></li>
+                            <li data-target="#homeCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Bootstrap display and sizing utilities -->
+                        <div class="carousel-inner"> <!-- must have an active class for carousel to show up -->
+                            <div class="carousel-item active"><!-- use d=display: block and w=width to override browser default image alignment; -->
+                                <img class="d-block w-100" src="img/do_not_eat_beans_detail.png" alt="Do Not Eat Beans" />
+                                <div class="carousel-caption">
+                                    <h3>Not BEANS! The mere sight of them...!</h3> <!--p class not shown on xs (< sm) viewports-->
+                                    <p class="d-none d-sm-block">The Plant Based Polymath: Pythagoras</p>
+                                </div>
+                            </div><div class="carousel-item">
+                                <img class="d-block w-100" src="img/blue_vegan_small.png" alt="blue vegan PETA activist" />                              <div class="carousel-caption">
+                                    <h3>It's just Cosplay, for Peta's sake</h3> 
+                                    <p class="d-none d-sm-block">Which human mutant anti-heroine is being portrayed?</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="img/vegan_alien.png" alt="Alien from Vega" />
+                                <div class="carousel-caption">
+                                    <h3>"Told-you-so: vegans can too get swole!"</h3> 
+                                    <p class="d-none d-sm-block"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a class="carousel-control-prev" href="#homeCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#homeCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-content align-items-center">
+                <div class="col-sm-4 order-sm-last col-md-3">
+                    <h2 class="text-sm-right">Ham and Beans</h2>
+                </div>   
+                <div class="col">
+                    <div class="media">
+                        <img class="d-flex mr-3 img-thumbnail" src="img/do_not_eat_beans_detail.png" alt="Pythagoras: hold the beans" />
+                        <div class="media-body align-self-center">
+                            <h3>To Bean or Not to Bean</h3>
+                            <p class="d-none d-sm-block">Sorry, Hamlet, but Pythagoros was a real toot, er, hoot!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="row row-content align-items-center">
+                <div class="col-sm-4 col-md-3">
+                    <h2>Featured</h2>
+                </div>
+                <div class="col">
+                    <div class="media">
+                        <!--align-self-* pertains to a single element-->
+                        <div class="media-body align-self-center">
+                            <h3>Where's Socrates</h3>
+                            <p class="d-none d-sm-block">Can you identify two of the ancient world's most famous vegetarians?</p>
+                        </div><!--to create a flexbox container and transform direct children into flex items, use the d-flex class-->
+                        <img class="d-flex ml-3 img-thumbnail" src="img/school_of_athens_partial.png" alt="School of Athens" />
+                    </div>
+                </div>
+            </div>
+          
+            <div class="row row-content align-items-center">
+                <div class="col-sm-4  col-md-3 order-sm-last">
+                    <h2 class="text-sm-right">The comics</h2>
+                </div>
+                <div class="col">
+                    <div class="media">
+                        <!--right margin 3 * 16px; 1 is 16px (default), so 3 is 48px-->
+                        <img src="img/blue_vegan_small.png" alt="Mystique" class="d-flex mr-3 img-thumbnail" />
+                        <div class="media-body align-self-center">
+                            <h3>Who is Mystique?</h3><!--d-none to hide content-->
+                            <p class="d-none d-sm-block">a.k.a. Raven Darkh&#246lme</p>
+                        </div>    
+                    </div>
+                </div> 
+            </div>
+        </div><!--end container-->
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 col-sm-2 offset-md-1"><!--md added to offset-->
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a href="#">Sites</a></li>
+                            <li><a href="contactus.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-5 text-center">
+                        <h5>Social</h5>
+                        <a class="btn btn-social-icon btn-instagram" href="http://instagram.com/"><i class="fa fa-instagram"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" href="http://facebook.com/"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                    </div>
+                    <div class="col-sm-4 text-center">
+                        <a role="button" class="btn btn-link" href="tel:+18888675309"><i class="fa fa-phone fa-lg"></i> 1-206-555-1234</a><br />
+                        <a role="button" class="btn btn-link" href="mailto:rooms@fungifest.fr"><i class="fa fa-envelope-o fa-lg"></i> rooms@fungifest.fr</a>
+                    </div>
+                </div><!--end row-->
+            </div><!--end container-->
+        </footer>
+
+        <!-- jQuery must come first, then Popper.js, then the Bootstrap JavaScript plugins. -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <!--had to get rid of tooltip to accomodate modal in js/scripts.js:
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>-->
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
